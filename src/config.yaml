@@ -1,0 +1,43 @@
+name: agent
+policyname: Gaussian
+num_steps: 3000000
+batch_size: 256
+
+hidden_units: [256, 256]
+memory_size: 1e6
+entropy_tuning: True
+ent_coef: 0.2, # It's ignored when entropy_tuning=True.
+multi_step: 1
+per: False  # prioritized experience replay
+beta: 0.4  # It's ignored when per=False.
+beta_annealing: 0.0001  # It's ignored when per=False.
+grad_clip: None
+updates_per_step: 1
+start_steps: 10000
+log_interval: 10
+eval_interval: 10000
+
+seed: 0
+MAX_EPISODES : 5000
+LASER_BEAM : 512
+LASER_HIST : 3
+HORIZON : 128
+LAMDA : 0.95
+BATCH_SIZE : 1024
+EPOCH : 2
+COEFF_ENTROPY : 5e-4
+CLIP_VALUE : 0.1
+NUM_ENV : 24
+OBS_SIZE : 512
+ACT_SIZE : 2
+LEARNING_RATE : 5e-5
+BUFFER_SIZE: 100000
+ROBOT_UPDATA_FREQ: 1000
+
+cuda: True
+alpha: 0.2  
+gamma: 0.99
+tau: 0.005
+target_update_interval: 1
+automatic_entropy_tuning: False
+lr: 0.0003
